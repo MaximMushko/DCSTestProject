@@ -36,9 +36,9 @@ Docker compose run 2 containers for Redis Cache and for the Application
 
 To run the Python tests execute the command
 
-<code>pip install api_test/requirement.txt
-  PYTHONPATH=. pytest api_tests/tests/apitest.py
-</code>
+<code>pip install api_test/requirement.txt</code>
+ <code>PYTHONPATH=. pytest api_tests/tests/apitest.py</code>
+
 
 Expected that 2 tests will fail:
 One because of the known issue with lowercase for a cityName from <code>GET /weather/{cityName}</code>
