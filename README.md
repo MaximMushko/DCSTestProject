@@ -29,6 +29,7 @@ To print Hello, world!
 To run the appilcation execute the command
 
 <code>mvn package spring-boot:repackage</code>
+
 <code>docker compose up</code>
 
 Docker compose run 2 containers for Redis Cache and for the Application
