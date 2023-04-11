@@ -28,6 +28,7 @@ To print Hello, world!
 
 To run the appilcation execute the command
 
+<code>mvn package spring-boot:repackage</code>
 <code>docker compose up</code>
 
 Docker compose run 2 containers for Redis Cache and for the Application
@@ -38,6 +39,6 @@ To run the Python tests execute the command
   PYTHONPATH=. pytest api_tests/tests/apitest.py
 </code>
 
-Expected that 2 tests will fail: 
+Expected that 2 tests will fail:
 One because of the known issue with lowercase for a cityName from <code>GET /weather/{cityName}</code>
 Second becuase of the 500 from <code>GET /error</code> endpoint
