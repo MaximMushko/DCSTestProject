@@ -1,0 +1,17 @@
+# Use the official Python image as the base image
+FROM python:3
+
+# Set the working directory to /demo
+WORKDIR /demo
+
+# Copy the current directory contents into the container at /app
+COPY . /demo
+
+# Install any needed packages specified in requirements.txt
+RUN pip install --no-cache-dir -r ./api_tests/requirements.txt
+
+# Install pytest
+RUN pip install pytest
+
+# Run the command to start the tests
+CMD ["sh", "-c", "PYTHONPATH=. pytest api_tests/tests/apitest.py"]

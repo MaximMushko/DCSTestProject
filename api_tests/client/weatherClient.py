@@ -11,10 +11,14 @@ config_path = os.path.join(ROOT_DIR, "config.ini")
 config = configparser.ConfigParser()
 config.read(config_path)
 
+host = os.environ.get('HOST')
+if host:
+    config.set('TEST_APP', 'base_url', host)
+    print(host)
+
 user = config['TEST_USER']['username']
 password = config['TEST_USER']['password']
 url = config["TEST_APP"]["base_url"]
-
 
 def get_weather_by_city(city, user=user, password=password):
     response = requests.get(url + "/weather/" + str.lower(city), auth=requests.auth.HTTPBasicAuth(user, password))
